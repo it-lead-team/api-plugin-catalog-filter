@@ -8,12 +8,12 @@
   "engines": {
     "node": ">=14.18.1"
   },
-  "homepage": "https://github.com/it-lead-team/api-plugin-history-record",
-  "url": "https://github.com/it-lead-team/api-plugin-history-record",
+  "homepage": "https://github.com/it-lead-team/api-plugin-history-records",
+  "url": "https://github.com/it-lead-team/api-plugin-history-records",
   "email": "hello-open-commerce@mailchimp.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/it-lead-team/api-plugin-history-record.git"
+    "url": "git+https://github.com/it-lead-team/api-plugin-history-records.git"
   },
   "author": {
     "name": "It-lead / Oleh Obodin",
@@ -22,7 +22,7 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/it-lead-team/api-plugin-history-record/issues"
+    "url": "https://github.com/it-lead-team/api-plugin-history-records/issues"
   },
   "sideEffects": false,
   "dependencies": {
