@@ -1,5 +1,6 @@
 import { createRequire } from "module";
-
+import createHistoryRecord from "./utils/createHistoryRecord.js";
+import schemas from "./graphql/schemas/index.js";
 const require = createRequire(import.meta.url);
 const pkg = require("../package.json");
 
@@ -12,6 +13,17 @@ export default async function register(app) {
   await app.registerPlugin({
     label: pkg.label,
     name: pkg.name,
-    version: pkg.version
+    version: pkg.version,
+    collections: {
+      HistoryTags: {
+        name: "HistoryTags",
+      }
+    },
+    graphQL: {
+      schemas,
+    },
+    functionsByType: {
+      createHistoryRecord: [createHistoryRecord],
+    },
   });
 }

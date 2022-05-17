@@ -1,28 +1,28 @@
 {
-  "name": "@reactioncommerce/api-plugin-example",
-  "description": "Boilerplate Example plugin for the Reaction API",
-  "label": "Example Plugin",
-  "version": "0.0.0-development",
+  "name": "@itleadopencommerce/api-plugin-history-records",
+  "description": "Plugin for wrap any shema with history records",
+  "label": "History Record Plugin",
+  "version": "0.0.0",
   "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=14.18.1"
   },
-  "homepage": "https://github.com/reactioncommerce/api-plugin-example",
-  "url": "https://github.com/reactioncommerce/api-plugin-example",
+  "homepage": "https://github.com/it-lead-team/api-plugin-history-record",
+  "url": "https://github.com/it-lead-team/api-plugin-history-record",
   "email": "hello-open-commerce@mailchimp.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactioncommerce/api-plugin-example.git"
+    "url": "git+https://github.com/it-lead-team/api-plugin-history-record.git"
   },
   "author": {
-    "name": "Mailchimp Open Commerce",
-    "email": "hello-open-commerce@mailchimp.com",
-    "url": "https://mailchimp.com/developer/open-commerce/"
+    "name": "It-lead / Oleh Obodin",
+    "email": "dev@it-lead.eu",
+    "url": "https://it-lead.eu"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/reactioncommerce/api-plugin-example/issues"
+    "url": "https://github.com/it-lead-team/api-plugin-history-record/issues"
   },
   "sideEffects": false,
   "dependencies": {

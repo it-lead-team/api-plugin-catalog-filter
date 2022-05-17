@@ -1,0 +1,9 @@
+
+type History {
+    _id: ID!,
+    accountId: ID!,
+    referenceId: ID!,
+    userId: ID!,
+    updatedAt: DateTime!,
+    userIP: String,
+}
