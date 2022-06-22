@@ -1,7 +1,7 @@
 import SimpleSchema from "simpl-schema";
 
 /**
- * @name History
+ * @name Policy
  * @memberof Schemas
  * @type {SimpleSchema}
  * @property {String} accountId required
@@ -10,11 +10,19 @@ import SimpleSchema from "simpl-schema";
  * @property {String} createdAt required
  * @property {String} updatedAt required
  */
- export const History = new SimpleSchema({
-    _id: String,
-    accountId: String,
-    referenceId: String,
-    userId: String,
-    updatedAt: Date,
-    userIP: String,
-  });
+ 
+
+ export const Filter = new SimpleSchema({
+  _id: String,
+  // accountId: String,
+  // userId: String,
+  // updatedAt: Date,
+  title: String,
+  value: Array,
+  // description: String,
+  // shopId: String,
+  // createdAt: String,
+  // updateAt: String,
+});
+
+

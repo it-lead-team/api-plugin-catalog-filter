@@ -1,9 +1,121 @@
 
-type History {
-    _id: ID!,
-    accountId: ID!,
-    referenceId: ID!,
-    userId: ID!,
-    updatedAt: DateTime!,
-    userIP: String,
+extend type Query {
+ getFiltersByAttrLabel(
+    "Tag id for collect product key filter"
+    tagIds: [ID]!,
+
+    # "List of keys for filter"
+    # keys: [String],
+
+    # ":"
+    # values: [String],
+
+    "Return only results  of catalog products that come after this cursor. Use this with `first` to specify the number of results to return."
+    after: ConnectionCursor,
+
+    "Return only results of catalog products that come before this cursor. Use this with `last` to specify the number of results to return."
+    before: ConnectionCursor,
+
+    "Return at most this many results of catalog products. This parameter may be used with either `after` or `offset` parameters."
+    first: ConnectionLimitInt,
+
+    "Return at most this many results of catalog products. This parameter may be used with the `before` parameter."
+    last: ConnectionLimitInt,
+
+    "Return only results that come after the Nth result. This parameter may be used with the `first` parameter."
+    offset: Int,
+
+  ): FilterByAttr
+
+  filtersByMetafieldKey(
+    "Tag id for collect product key filter"
+    tagIds: [ID]!,
+
+    # "List of keys for filter"
+    # keys: [String],
+
+    # ":"
+    # values: [String],
+
+    "Return only results that come after this cursor. Use this with `first` to specify the number of results to return."
+    after: ConnectionCursor,
+
+    "Return only results that come before this cursor. Use this with `last` to specify the number of results to return."
+    before: ConnectionCursor,
+
+    "Return at most this many results. This parameter may be used with either `after` or `offset` parameters."
+    first: ConnectionLimitInt,
+
+    "Return at most this many results. This parameter may be used with the `before` parameter."
+    last: ConnectionLimitInt,
+
+    "Return only results that come after the Nth result. This parameter may be used with the `first` parameter."
+    offset: Int,
+
+  ): FilterByMetafieldKeyConnection!
+}
+
+
+
+
+type FilterByMetafieldKeyConnection {
+  "The list of nodes that match the query, wrapped in an edge to provide a cursor string for each"
+  edges: [FilterByMetafieldKeyEdge]
+
+  """
+  You can request the `nodes` directly to avoid the extra wrapping that `NodeEdge` has,
+  if you know you will not need to paginate the results.
+  """
+  nodes: [filtersByMetafieldKey]
+
+  "Information to help a client request the next or previous page"
+  pageInfo: PageInfo!
+
+  "The total number of nodes that match your query"
+  totalCount: Int!
+}
+
+type FilterByAttr {
+    "Filter object with values"
+    filter: JSONObject,
+}
+
+
+type filtersByMetafieldKey {
+    "Key param for filter"
+    key: String,
+
+    "Values for filter"
+    values: [String]
+}
+
+"A connection edge in which each node is a `FilterByAttr` object"
+type FilterByAttrEdge implements NodeEdge {
+  "The cursor that represents this node in the paginated results"
+  cursor: ConnectionCursor!
+
+  "The filter"
+  node: FilterByAttr
+}
+
+"A connection edge in which each node is a `filtersByMetafieldKey` object"
+type FilterByMetafieldKeyEdge implements NodeEdge {
+  "The cursor that represents this node in the paginated results"
+  cursor: ConnectionCursor!
+
+  "The filter"
+  node: filtersByMetafieldKey
+}
+
+
+"An filter node"
+type FilterByAttr implements Node {
+  _id: ID!,
+  filter:  JSONObject
+}
+
+
+type filtersByMetafieldKey implements Node {
+  _id: ID!,
+  filter:  JSONObject
 }

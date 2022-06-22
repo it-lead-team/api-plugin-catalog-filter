@@ -1,19 +1,19 @@
 {
-  "name": "@itleadopencommerce/api-plugin-history-records",
-  "description": "Plugin for wrap any shema with history records",
-  "label": "History Record Plugin",
+  "name": "@itleadopencommerce/api-plugin-catalog-filter",
+  "description": "Plugin for filter catalog by key values of variants",
+  "label": "Catalog Filter Plugin",
   "version": "0.0.0",
   "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=14.18.1"
   },
-  "homepage": "https://github.com/it-lead-team/api-plugin-history-records",
-  "url": "https://github.com/it-lead-team/api-plugin-history-records",
+  "homepage": "https://github.com/it-lead-team/api-plugin-catalog-filter",
+  "url": "https://github.com/it-lead-team/api-plugin-catalog-filter",
   "email": "hello-open-commerce@mailchimp.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/it-lead-team/api-plugin-history-records.git"
+    "url": "git+https://github.com/it-lead-team/api-plugin-catalog-filter.git"
   },
   "author": {
     "name": "It-lead / Oleh Obodin",
@@ -22,7 +22,7 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/it-lead-team/api-plugin-history-records/issues"
+    "url": "https://github.com/it-lead-team/api-plugin-catalog-filter/issues"
   },
   "sideEffects": false,
   "dependencies": {
