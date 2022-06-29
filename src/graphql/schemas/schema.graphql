@@ -25,7 +25,7 @@ extend type Query {
     "Return only results that come after the Nth result. This parameter may be used with the `first` parameter."
     offset: Int,
 
-  ): FilterByAttr
+  ): FilterConnection
 
   filtersByMetafieldKey(
     "Tag id for collect product key filter"
@@ -75,19 +75,36 @@ type FilterByMetafieldKeyConnection {
   totalCount: Int!
 }
 
-type FilterByAttr {
-    "Filter object with values"
-    filter: JSONObject,
+type Filter {
+  "Filter id"
+  _id: ID,
+
+  "Filter tagIds"
+  tagIds: [ID],
+
+  "Filter title"
+  title: String,
+
+  "Filter values"
+  values: [String]
 }
 
+type FilterConnection {
+  edges: [FilterByAttrEdge]
 
-type filtersByMetafieldKey {
-    "Key param for filter"
-    key: String,
+  """
+  You can request the `nodes` directly to avoid the extra wrapping that `NodeEdge` has,
+  if you know you will not need to paginate the results.
+  """
+  nodes: [Filter]
 
-    "Values for filter"
-    values: [String]
+  "Information to help a client request the next or previous page"
+  pageInfo: PageInfo!
+
+  "The total number of nodes that match your query"
+  totalCount: Int!
 }
+
 
 "A connection edge in which each node is a `FilterByAttr` object"
 type FilterByAttrEdge implements NodeEdge {
@@ -95,27 +112,12 @@ type FilterByAttrEdge implements NodeEdge {
   cursor: ConnectionCursor!
 
   "The filter"
-  node: FilterByAttr
-}
-
-"A connection edge in which each node is a `filtersByMetafieldKey` object"
-type FilterByMetafieldKeyEdge implements NodeEdge {
-  "The cursor that represents this node in the paginated results"
-  cursor: ConnectionCursor!
-
-  "The filter"
-  node: filtersByMetafieldKey
+  node: Filter
 }
 
 
 "An filter node"
-type FilterByAttr implements Node {
+type Filter implements Node {
   _id: ID!,
-  filter:  JSONObject
-}
-
-
-type filtersByMetafieldKey implements Node {
-  _id: ID!,
-  filter:  JSONObject
+  filter:  Filter
 }

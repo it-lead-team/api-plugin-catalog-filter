@@ -13,9 +13,11 @@ import collectFiltersByAttrLabel from "../..//utils/collectFiltersByAttrLabel.js
  * @returns {Promise<Object>|undefined} - An Order document, if one is found
  */
 export default async function getFiltersByAttrLabel(context, { tagIds} = {}) {
+  const {Filters} = context.collections;
+  
   if (!tagIds) {
     throw new ReactionError("invalid-param", "You must provide tagIds");
   }
 
-  return await collectFiltersByAttrLabel(context, { tagIds: tagIds });
+  return await Filters.find({tagIds: {$in: tagIds}});
 }

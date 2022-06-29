@@ -1,12 +1,12 @@
 import SimpleSchema from "simpl-schema";
 
 /**
- * @name Policy
+ * @name Filter
  * @memberof Schemas
  * @type {SimpleSchema}
- * @property {String} accountId required
- * @property {String} email required
- * @property {String} status required
+ * @property {String} _id required
+ * @property {String} title required
+ * @property {String} value required
  * @property {String} createdAt required
  * @property {String} updatedAt required
  */
@@ -14,15 +14,11 @@ import SimpleSchema from "simpl-schema";
 
  export const Filter = new SimpleSchema({
   _id: String,
-  // accountId: String,
-  // userId: String,
-  // updatedAt: Date,
+  tagIds: Array,
   title: String,
-  value: Array,
-  // description: String,
-  // shopId: String,
-  // createdAt: String,
-  // updateAt: String,
+  values: Array,
+  createdAt: String,
+  updatedAt: String,
 });
 
 

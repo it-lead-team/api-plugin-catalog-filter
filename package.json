@@ -2,7 +2,7 @@
   "name": "@itleadopencommerce/api-plugin-catalog-filter",
   "description": "Plugin for filter catalog by key values of variants",
   "label": "Catalog Filter Plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "type": "module",
   "engines": {
@@ -26,6 +26,7 @@
   },
   "sideEffects": false,
   "dependencies": {
+    "@itleadopencommerce/api-utils": "^0.0.0-development",
     "@reactioncommerce/api-utils": "^1.16.9"
   },
   "devDependencies": {
