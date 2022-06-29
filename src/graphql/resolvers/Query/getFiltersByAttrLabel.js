@@ -13,40 +13,23 @@ import collectFiltersByAttrLabel from "../../../utils/collectFiltersByAttrLabel"
  * @param {String} args.opaqueTagId
  * @param {Object} context - an object containing the per-request state
  * @param {Object} info Info about the GraphQL request
- * @returns {Promise<Object>} Products
+ * @returns {Promise<Object>} Filters
  */
 export default async function getFiltersByAttrLabel(_, args, context, info) {
-  // console.log(tagIds)
+
   const {
     tagIds: opaqueTagIds,
-    // shopIds: opaqueShopIds,
-    // query: queryString,
     ...connectionArgs
   } = args;
 
   const tagIds = opaqueTagIds && opaqueTagIds.map(decodeTagOpaqueId);
 
-  // console.log(tagIds)
-
-  // const query = await context.queries.getFiltersByAttrLabel(context, {
-  //   tagIds
-  // });
 
   const query = await context.queries.getFiltersByAttrLabel(context, {
     tagIds: tagIds
   });
- 
-  // const { nodes } = await getPaginatedResponse(query, connectionArgs, {
-  //   includeHasNextPage: wasFieldRequested("pageInfo.hasNextPage", info),
-  //   includeHasPreviousPage: wasFieldRequested("pageInfo.hasPreviousPage", info),
-  //   includeTotalCount: wasFieldRequested("totalCount", info)
-  // });
 
-  // const products = nodes.map((el) => {
-  //   return el.product
-  // });
 
-  // return {filter: JSON.stringify(await collectFiltersByAttrLabel(products))};
   return getPaginatedResponse(query, connectionArgs, {
     includeHasNextPage: wasFieldRequested("pageInfo.hasNextPage", info),
     includeHasPreviousPage: wasFieldRequested("pageInfo.hasPreviousPage", info),
