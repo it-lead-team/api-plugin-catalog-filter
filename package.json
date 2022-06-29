@@ -2,7 +2,7 @@
   "name": "@itleadopencommerce/api-plugin-catalog-filter",
   "description": "Plugin for filter catalog by key values of variants",
   "label": "Catalog Filter Plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "type": "module",
   "engines": {
