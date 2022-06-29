@@ -1,4 +1,4 @@
-# api-plugin-catalog filter
+# api-plugin-catalog-filter
 
 
 ## Summary
