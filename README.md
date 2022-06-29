@@ -1,9 +1,9 @@
-# api-plugin-history-records
+# api-plugin-catalog filter
 
 
 ## Summary
 
-This plugin provides functionality to create history records for Collections
+This plugin provides functionality to collect/remove filters from published catalog products
 
 ## Included in this example plugin
 
